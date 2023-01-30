@@ -19,5 +19,6 @@ else
     {
         countZero = i;
     }
-    System.Console.WriteLine((inputNumber / (countZero / 100)) % 10); // 
+    // число 100 позволяет "отрезать цисла врепеди", a число 10 - сзади
+    System.Console.WriteLine((inputNumber / (countZero / 100)) % 10); 
 }
