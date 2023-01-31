@@ -5,20 +5,19 @@
 // 32679 -> 6
 
 System.Console.Write("Enter number: ");
-int inputNumber = Convert.ToInt32(Console.ReadLine());
-int countZero = 0;
+ulong inputNumber = Convert.ToUInt64(Console.ReadLine());
+ulong countZero = 0;
 
-
-if (inputNumber < 100)
+if (inputNumber > 100)
 {
-    System.Console.WriteLine("Третьей цифры нет");
-}
-else
-{
-    for (int i = 100; i < inputNumber; i *= 10)
+    for (ulong i = 100; i < inputNumber; i *= 10)
     {
         countZero = i;
     }
-    // число 100 позволяет "отрезать цисла врепеди", a число 10 - сзади
-    System.Console.WriteLine((inputNumber / (countZero / 100)) % 10); 
+    ulong numbersAhead = countZero / 100;
+    System.Console.WriteLine((inputNumber / (numbersAhead)) % 10);
 }
+else
+    {
+        System.Console.WriteLine("Третьей цифры нет");
+    }
