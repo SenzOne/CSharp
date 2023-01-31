@@ -4,6 +4,7 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
+
 System.Console.Write("Enter number: ");
 ulong inputNumber = Convert.ToUInt64(Console.ReadLine());
 ulong countZero = 0;
