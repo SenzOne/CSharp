@@ -4,39 +4,48 @@
 // [1 2 3 4 5] -> 5 8 3
 // [6 7 3 6] -> 36 21
 
-// Пока что не доделана!
+// Пока что не доделана! 
 
-System.Console.WriteLine("Введи количество элементов массива: ");
+System.Console.Write("Введи количество элементов массива: ");
 int Count_Numbers = Convert.ToInt32(Console.ReadLine());
 
 int[] SumExremes(int num)
 {
     int[] arr = CreateArr(num);
-    Console.WriteLine(string.Join(", ", arr));
     arr = FillRandom(arr);
-    Console.WriteLine(string.Join(", ", arr));
-    int[] ResultArr = new int[3];
-    for (int i = 0, j = arr.Length - 1 ; i < arr.Length; i++, j--)
+    
+    int HalfLength = arr.Length / 2; // 5 -> 2
+
+    if (arr.Length % 2 == 0) HalfLength = arr.Length / 2;
+    else HalfLength = (arr.Length / 2) + 1;
+
+    int[] ResultArr = new int[HalfLength];
+    for (int i = 0, j = arr.Length - 1; i < HalfLength; i++, j--)
     {
-        for (int k = 0; k < ResultArr.Length; k++)
+        ResultArr[i] = arr[i] * arr[j];
+        if (arr.Length % 2 == 1 && i == (HalfLength - 1))
         {
-            ResultArr;
+            ResultArr[i] = arr[i];
+            break;
         }
     }
     return ResultArr;
 }
+
 
 int[] CreateArr(int numbers)
 {
     int[] arr = new int[numbers];
     return arr;
 }
+
 int[] FillRandom(int[] arry)
 {
     for (int i = 0; i < arry.Length; i++)
     {
-        arry[i] = new Random().Next(1, 100);
+        arry[i] = new Random().Next(1, 5);
     }
+    Console.WriteLine(string.Join(", ", arry));
     return arry;
 }
 
