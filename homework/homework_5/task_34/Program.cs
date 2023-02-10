@@ -3,18 +3,20 @@
 // которая покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
-System.Console.Write("Введи количество Элементов массива: ");
+System.Console.Write("Enter the number of array elements: ");
 int CountElements = Convert.ToInt32(Console.ReadLine());
 
+// Main method
 int MainMethod(int LenInputArr)
 {
     int[] arr = CreatedArray(LenInputArr);
     arr = FillArray(arr);
     System.Console.WriteLine("");
-    return EvenNumbers(arr);
+    return GetEvenNumbers(arr);
 }
 
 
+// method for creating an array of length count
 int[] CreatedArray(int count)
 {
     int[] arr = new int[count];
@@ -23,30 +25,34 @@ int[] CreatedArray(int count)
 }
 
 
+// method for filling an array with random numbers
 int[] FillArray(int[] SecondCucleArr)
 {
+    Console.Write($"added a number: ");
     for (int i = 0; i < SecondCucleArr.Length; i++)
     {   
         int NewNumber = new Random().Next(100, 1000);
         SecondCucleArr[i] = NewNumber;
-        System.Console.WriteLine($"added a number {NewNumber}");
+        Console.Write($" {NewNumber}");
     }
     return SecondCucleArr;
 }
 
 
-int EvenNumbers(int[] ResultArr)
+// Method for finding black numbers in an array
+int GetEvenNumbers(int[] ResultArr)
 {
+    Console.Write($"Found number: ");
     int count = 0;
     for (int i = 0; i < ResultArr.Length; i++)
     {
         if(ResultArr[i] % 2 == 0)
         {
             count += 1;
-            System.Console.WriteLine($"Found number {ResultArr[i]}");
+            Console.Write($" {ResultArr[i]}");
         }
     }
     return count;
 }
 
-System.Console.WriteLine($"\nThe number of even numbers is {MainMethod(CountElements)}\n");
+System.Console.WriteLine($"\nThe number of even numbers is: {MainMethod(CountElements)}\n");
