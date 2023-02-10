@@ -28,7 +28,7 @@ int[] CreatedArray(int count)
 // method for filling an array with random numbers
 int[] FillArray(int[] SecondCucleArr)
 {
-    Console.Write($"added a number: ");
+    Console.Write($"Added a number: ");
     for (int i = 0; i < SecondCucleArr.Length; i++)
     {   
         int NewNumber = new Random().Next(100, 1000);
