@@ -4,8 +4,6 @@
 // [1 2 3 4 5] -> 5 8 3
 // [6 7 3 6] -> 36 21
 
-// Пока что не доделана! 
-
 System.Console.Write("Введи количество элементов массива: ");
 int Count_Numbers = Convert.ToInt32(Console.ReadLine());
 
@@ -14,10 +12,10 @@ int[] SumExremes(int num)
     int[] arr = CreateArr(num);
     arr = FillRandom(arr);
     
-    int HalfLength = arr.Length / 2; // 5 -> 2
+    int HalfLength = (arr.Length % 2 == 0) ? 
+            HalfLength = arr.Length / 2 : 
+            HalfLength = (arr.Length / 2) + 1;
 
-    if (arr.Length % 2 == 0) HalfLength = arr.Length / 2;
-    else HalfLength = (arr.Length / 2) + 1;
 
     int[] ResultArr = new int[HalfLength];
     for (int i = 0, j = arr.Length - 1; i < HalfLength; i++, j--)
@@ -26,7 +24,6 @@ int[] SumExremes(int num)
         if (arr.Length % 2 == 1 && i == (HalfLength - 1))
         {
             ResultArr[i] = arr[i];
-            break;
         }
     }
     return ResultArr;
@@ -38,6 +35,7 @@ int[] CreateArr(int numbers)
     int[] arr = new int[numbers];
     return arr;
 }
+
 
 int[] FillRandom(int[] arry)
 {
