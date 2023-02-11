@@ -13,9 +13,7 @@ int[] SumExremes(int num)
     arr = FillRandom(arr);
     
     int HalfLength = (arr.Length % 2 == 0) ? 
-            HalfLength = arr.Length / 2 : 
-            HalfLength = (arr.Length / 2) + 1;
-
+        HalfLength = arr.Length / 2 : HalfLength = (arr.Length / 2) + 1;
 
     int[] ResultArr = new int[HalfLength];
     for (int i = 0, j = arr.Length - 1; i < HalfLength; i++, j--)
