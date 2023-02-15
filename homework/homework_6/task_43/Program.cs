@@ -13,7 +13,7 @@ double Prompt(string massege)
     return result;
 }
 
-void GetPosicionX(double k1 = 5, double k2 = 9, double b1 = 2, double b2 = 4)
+void GetPosicion(double k1 = 5, double k2 = 9, double b1 = 2, double b2 = 4)
 {
     if (k1 == k2) Console.WriteLine("Прямые параллельны!");
     else

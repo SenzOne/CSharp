@@ -10,7 +10,7 @@ int[] GetArray(int CountNumber)
     int[] arr = new int[CountNumber];
     
     System.Console.Write("Заполнить массив случайными числами (да / нет)? ");
-    String Ansver = (Console.ReadLine());
+    var Ansver = (Console.ReadLine());
 
     if (Ansver == "да") arr = FillRandom(arr);
     else arr = FillEntered(arr);
