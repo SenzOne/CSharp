@@ -7,8 +7,7 @@
 int Prompt(string massege)
 {
     System.Console.Write(massege);
-    string readInput = Console.ReadLine();
-    int result = Convert.ToInt32(readInput);
+    int result = Convert.ToInt32(Console.ReadLine());
     return result;
 }
 

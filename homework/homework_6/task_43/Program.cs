@@ -8,8 +8,7 @@
 double Prompt(string massege)
 {
     System.Console.Write(massege);
-    string readInput = Console.ReadLine();
-    double result = Convert.ToDouble(readInput);
+    double result = Convert.ToDouble(Console.ReadLine());
     return result;
 }
 
@@ -31,5 +30,5 @@ double b_1 = Prompt("Введи b1: ");
 
 double k_2 = Prompt("Введи k2: ");
 double b_2 = Prompt("Введи b2: ");
-GetPosicionX(k_1, k_2, b_1, b_2);
+GetPosicion(k_1, k_2, b_1, b_2);
 // GetPosicionX();
