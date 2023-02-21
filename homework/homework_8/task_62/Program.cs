@@ -5,6 +5,13 @@
 // 11 16 15 06
 // 10 09 08 07
 
+int Prompt(string massege)
+{
+    System.Console.Write(massege);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
+
 int[,] CreaateArray(int m = 30, int n = 30)
 {
     int[,] array = new int[m, n];
@@ -64,7 +71,8 @@ int[,] FillArray(int[,] arr)
 
 void Main()
 {
-    int[,] arr = CreaateArray();
+    int n = Prompt("введи размер спирали: ");
+    int[,] arr = CreaateArray(n, n);
     arr = FillArray(arr);
     PrintArr(arr);
 }
