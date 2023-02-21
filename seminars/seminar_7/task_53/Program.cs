@@ -9,7 +9,7 @@ int Prompt(string massege)
 }
 
 
-int[,] CreaateArray(int m = 5, int n = 5)
+int[,] CreaateArray(int m = 3, int n = 4)
 {
     int[,] array = new int[m, n];
     return array;
@@ -44,9 +44,9 @@ int[,] FillArrayRandom(int[,] coll)
 
 int[,] ReplaceRowsFirstVsLast(int[,] coll)
 {
-    for (int j = 0; j < coll.GetLength(1); j++)
+    for (int j = 0; j < coll.GetLength(0); j++)
     {
-        (coll[0, j], coll[coll.GetLength(1) - 1, j]) = ((coll[coll.GetLength(1) - 1, j]), coll[0, j]);
+        (coll[0, j], coll[coll.GetLength(0) - 1, j]) = ((coll[coll.GetLength(0) - 1, j]), coll[0, j]);
     }
     return coll;
 }
